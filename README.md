@@ -24,6 +24,8 @@ The zero‑coupon discount curve is bootstrapped in two stages:
 
 The resulting curve is used both for discounting and forwarding. Figure 1 shows the SOFR OIS zero‑coupon yield curve built from the dataset. Short‑term rates (1D–6M) drop from about 4.45 % to 3.5 % and then gradually rise toward 4.2 % by 20 years.
 
+![Figure 1](images/cell2_img0.png)
+
 Consistency checks ensure that the curve is arbitrage‑free:
 *repricing errors for all helpers are below 0.01 bp,
 *discount factors decrease with maturity and remain positive,
@@ -48,6 +50,8 @@ $$
 ### 2.3 Calibration Evaluation
 
 Model prices are computed across all option‑maturity and swap‑tenor combinations and compared against market PVs. Figure 2 displays the absolute pricing errors for the one‑factor Hull‑White model. Errors are small (1–5 bp) for short maturities but exceed 20 bp for long options and long tenors, demonstrating the limitations of a single‑factor model. The overall RMSE is approximately 8 bp.
+
+![Figure 2](images/cell7_img1.png)
 
 ### 2.4 Exposure Engine
 
@@ -75,17 +79,28 @@ Here demonstrates the result of a swaption which expires in 6 Months and its ten
 
 ### Short-rate paths
 
-Figure 4 plots sample Hull‑White short‑rate paths used in the exposure simulation. Rates start around 4.3 %, fall to about 2 %, and then revert toward 3.5–4.5 %, illustrating the mean‑reverting nature of the model.
+Figure 3 plots sample Hull‑White short‑rate paths used in the exposure simulation. Rates start around 4.3 %, fall to about 2 %, and then revert toward 3.5–4.5 %, illustrating the mean‑reverting nature of the model.
+
+![Figure 3](images/cell12_img9.png)
 
 ### Exposure profile and tail risk
 
-Figure 5 shows the expected exposure curve and the 95 % and 99 % potential future exposure (PFE). Because the example swaption is at the money, EE remains small (~0.002), while the PFE bands widen over time, indicating growing tail risk.
+Figure 4 shows the expected exposure curve and the 95 % and 99 % potential future exposure (PFE). Because the example swaption is at the money, EE remains small (~0.002), while the PFE bands widen over time, indicating growing tail risk.
 
-A complementary view is provided by the 95 % Value‑at‑Risk band in Figure 6, where the shaded region denotes the interquartile range of mark‑to‑market values and the line shows the EE. The band widens steadily, highlighting how dispersion increases even when average exposure is flat.
+![Figure 4](images/cell11_img3.png)
 
-The wrong‑way risk correlation, shown in Figure 7, turns negative soon after inception and remains around –0.8. A negative correlation implies that the swaption’s exposure tends to be highest when interest rates fall, which is typical for a payer swaption.
+A complementary view is provided by the 95 % Value‑at‑Risk band in Figure 5, where the shaded region denotes the interquartile range of mark‑to‑market values and the line shows the EE. The band widens steadily, highlighting how dispersion increases even when average exposure is flat.
 
-Figures 8 and 9 depict the skewness and kurtosis of the exposure distribution. Both increase materially: skewness grows from about 0.5 to over 1.5, and kurtosis from around 0.4 to 3.0. This highlights the increasingly asymmetric and heavy‑tailed nature of exposures over time.
+![Figure 5](images/cell11_img4.png)
+
+The wrong‑way risk correlation, shown in Figure 6, turns negative soon after inception and remains around –0.8. A negative correlation implies that the swaption’s exposure tends to be highest when interest rates fall, which is typical for a payer swaption.
+
+![Figure 6](images/cell11_img4.png)
+
+Figures 7 and 8 depict the skewness and kurtosis of the exposure distribution. Both increase materially: skewness grows from about 0.5 to over 1.5, and kurtosis from around 0.4 to 3.0. This highlights the increasingly asymmetric and heavy‑tailed nature of exposures over time.
+
+![Figure 7](images/cell11_img6.png)
+![Figure 8](images/cell11_img7.png)
   
 ## Next Steps
 
