@@ -94,7 +94,7 @@ A complementary view is provided by the 95 % Value‑at‑Risk band in Figure�
 ![Figure 5](images/cell11_img4.png)
 
 
-Figures 7 and 8 depict the skewness and kurtosis of the exposure distribution. Both increase materially: skewness grows from about 0.5 to over 1.5, and kurtosis from around 0.4 to 3.0. This highlights the increasingly asymmetric and heavy‑tailed nature of exposures over time.
+Figures 7 and 8 depict the skewness and kurtosis of the exposure distribution. Both increase materially: skewness grows from about 0.5 to over 1.8, and kurtosis from around 0.4 to 3.0. This highlights the increasingly asymmetric and heavy‑tailed nature of exposures over time.
 
 ![Figure 7](images/cell11_img6.png)
 ![Figure 8](images/cell11_img7.png)
